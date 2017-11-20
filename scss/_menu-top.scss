@@ -1,0 +1,222 @@
+.menu-top {
+	
+	display: none;
+	grid-gap: 7px;
+	grid-template-columns: 80% 1fr;
+	
+	li:first-child a {
+		margin-left:0;
+	}
+	
+	li:last-child a { 
+		margin-right: 0;
+	}
+	
+	a { 
+		display: block;
+		padding: 20px 9px 5px 6px;
+		color: #000;
+		text-transform: uppercase;
+		font-size:11px;
+		border-radius: 5px;
+		margin: 2px;
+		text-decoration: none;
+		font-weight: bold;
+		background: #ebebeb;
+		transition: background 300ms;
+		
+		&:hover{ 
+			color: #fff;
+			transition: background 300ms;
+		}
+	}
+	
+	.user-navigation { 
+		display: flex;
+		flex-direction: row;
+		
+		li {
+			
+			flex: 1;
+			
+			a { 
+				background: #9ed1be;
+				padding: 25px 0px 8px 0px;
+				color: #fff;
+				text-align: center;
+				
+				&:hover { 
+					background:#79aa97;
+				}
+				
+				i { 
+					margin-top:5px;
+					margin-bottom: 15px;
+				}
+				
+				span { 
+					display:none;
+				}
+			}
+		}
+	}
+	
+	.main-navigation { 
+		position: relative;
+		display: none;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+	
+	.main-navigation > li { 
+		
+		flex: auto;
+		min-width: 20%;
+		
+		.subnav { 
+			display: none;
+			position: absolute;
+			z-index: 101;
+			background: white;
+			padding: 3px;
+			border-radius: 5px;
+			width: 100%;
+			top: 86px;
+			left:0;
+			
+			&.showing { 
+				display: block;
+			}
+			
+			li { 
+				display:inline;
+				a { 
+					font-weight: normal;
+					color: #fff;
+					padding:5px;
+					float: left;
+					background: transparent;
+				}
+			}
+		}
+		
+		&.news a:hover, &.business a:hover { 
+			background: #005a8c;
+			
+		}
+		
+		&.news, &.business { 
+			.subnav { 
+				background: lighten(#005a8c, 10);
+				border:2px solid #005a8c;
+			}
+		}
+		
+		&.opinion a:hover { 
+			background: #007d5d;
+		}
+
+		&.opinion { 
+			.subnav { 
+				background: lighten(#007d5d, 10);
+				border:2px solid #007d5d;
+			}
+		}
+		
+		&.arts a:hover, &.life a:hover { 
+			background: #e85e1c;
+		}
+
+		&.arts , &.life{ 
+			.subnav { 
+				background: lighten(#e85e1c, 10);
+				border:2px solid #e85e1c;
+			}
+		}
+		
+		&.sports a:hover { 
+			background: #dd2424;
+		}
+
+		&.sports { 
+			.subnav { 
+				background: lighten(#dd2424, 10);
+				border:2px solid #dd2424;
+			}
+		}
+
+		&.careers a:hover { 
+			background:#804b6d;
+		}
+		
+		&.obits a:hover, &.classifieds a:hover { 
+			background:#ebac10;
+		}
+		
+		&.driving a:hover { 
+			background: #4f5188;
+		}
+
+		&.driving { 
+			.subnav { 
+				background: lighten(#4f5188, 10);
+				border:2px solid #4f5188;
+			}
+		}
+	}
+	
+}
+
+@mixin menu-top--md() {
+	.menu-top { 
+		display: grid;
+	}
+	.menu-top { 
+		.main-navigation { 
+			display: flex;
+		}
+	}
+}
+
+@mixin menu-top--lg() {
+	
+	.menu-top {
+		
+		grid-template-columns: 85% 1fr;
+		
+		a { 
+			padding: 64px 4px 4px 4px;
+		}
+
+		.main-navigation > li { 
+		
+			flex: auto;
+			min-width: 20%;
+			
+			.subnav { 
+				top: 89px;
+			}
+		}
+		
+		.user-navigation { 
+			li {
+				a { 
+					span { 
+						display:block;
+					}
+					
+					i { 
+						margin-top:0;
+						margin-bottom: 2px;
+					}
+				}
+			}
+		}
+		
+		.main-navigation {  
+			li { 
+				min-width: 0%;
+			}
+		}
+	}
+}

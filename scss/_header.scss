@@ -1,0 +1,60 @@
+.header-container { 
+	position: fixed;
+	z-index: 5;
+	width:100%;
+	border-bottom: 1px solid #ccc;
+	background: #fff;
+	top:0;
+	
+	.main-header {
+		padding:0 10px 0 10px;
+		max-width: 1190px;
+		margin: 10px auto 10px auto;
+		display: flex;
+		
+		.menu-container { 
+			flex-grow:1;
+		}
+	}
+}
+
+.logo-container { 
+	width: 65px;
+	min-width:65px;
+	padding-right: 8px;
+	transition:500ms;
+	img { 
+		max-width: 100%;
+	}
+}
+
+@mixin header--md() {
+
+	.nav-fixed { 
+		.logo-container {
+			width: 86px;
+			min-width: 86px; 
+			transition:300ms;
+		}
+		
+		.menu-bottom { 
+			display:none;
+		}
+	}
+
+	.header-container { 
+		border-bottom: none;
+	}
+	
+	.logo-container { 
+		width: 128px;
+		min-width:128px;
+		transition:300ms;
+		img { 
+			margin-top:3px;
+		}
+	}
+}
+
+@mixin header--lg() {
+}
